@@ -16,7 +16,7 @@
   <body>
     <header>
       <img class="header-logo" src="./images/logo.svg" alt="" />
-      <nav class="navbar">
+      <nav class="navbar" aria-label="main">
         <ul class="navbar-list">
           <li><a href="/">Features</a></li>
           <li><a href="/">Team</a></li>
@@ -41,19 +41,33 @@
             and co-workers.
           </p>
 
-          <form class="section-hero-email-container" action="">
+          <form class="section-hero-email-container" action="" novalidate>
+            <label class="visually-hidden" for="section-hero-email"
+              >Enter your email</label
+            >
             <input
               type="email"
               name="email"
               id="section-hero-email"
+              aria-describedby="error-message-container-one"
               class="section-hero-email"
               placeholder="Enter your email..."
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              autocomplete="email"
             />
-            <label for="section-hero-email"></label>
 
             <button class="hero-content-button" type="submit">
               Get Started
             </button>
+            <div
+              id="error-message-container-one"
+              class="error-message-container"
+              aria-live="polite"
+            >
+              <span class="error-message" id="error-message"
+                >Enter a valid email</span
+              >
+            </div>
           </form>
         </div>
       </section>
@@ -84,8 +98,48 @@
             </p>
 
             <a class="stay-productive-content-link" href="/"
-              >See how Fylo works</a
-            >
+              >See how Fylo works
+
+              <svg
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <circle id="b" cx="6" cy="6" r="6" />
+                  <filter
+                    x="-25%"
+                    y="-25%"
+                    width="150%"
+                    height="150%"
+                    filterUnits="objectBoundingBox"
+                    id="a"
+                  >
+                    <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+                    <feGaussianBlur
+                      stdDeviation="1"
+                      in="shadowOffsetOuter1"
+                      result="shadowBlurOuter1"
+                    />
+                    <feColorMatrix
+                      values="0 0 0 0 0.239215686 0 0 0 0 0.62745098 0 0 0 0 0.560784314 0 0 0 0.793506567 0"
+                      in="shadowBlurOuter1"
+                    />
+                  </filter>
+                </defs>
+                <g fill="none" fill-rule="evenodd">
+                  <g transform="translate(2 2)">
+                    <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                    <use fill="currentColor" xlink:href="#b" />
+                  </g>
+                  <path
+                    d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z"
+                    fill="#FFF"
+                  />
+                </g>
+              </svg>
+            </a>
           </div>
 
           <figure class="stay-productive-content-testimonial">
@@ -122,18 +176,33 @@
           </p>
         </div>
 
-        <form class="section-access-email-container" action="">
+        <form class="section-access-email-container" action="" novalidate>
+          <label class="visually-hidden" for="section-access-email"
+            >Enter your email</label
+          >
           <input
             type="email"
             name="email"
             id="section-access-email"
+            aria-describedby="error-message-container-two"
             class="section-access-email"
+            placeholder="Enter your email..."
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            autocomplete="email"
           />
-          <label for="section-access-email"></label>
 
           <button class="button section-access-email-button" type="submit">
             Get Started For Free
           </button>
+          <div
+            id="error-message-container-two"
+            class="error-message-container"
+            aria-live="polite"
+          >
+            <span class="error-message" id="error-message"
+              >Enter a valid email</span
+            >
+          </div>
         </form>
       </section>
     </main>
@@ -172,7 +241,7 @@
           </ul>
         </address>
 
-        <nav class="footer-nav">
+        <nav class="footer-nav" aria-label="footer">
           <ul class="footer-nav-list">
             <li><a href="">About Us</a></li>
             <li><a href="">Jobs</a></li>
@@ -186,7 +255,7 @@
 
         <ul class="social-media-list">
           <li class="social-media-link">
-            <a href="/">
+            <a href="/" aria-label="Follow us on Facebook">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -200,7 +269,7 @@
             </a>
           </li>
           <li class="social-media-link">
-            <a href="/">
+            <a href="/" aria-label="Follow us on Twitter">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -214,7 +283,7 @@
             </a>
           </li>
           <li class="social-media-link">
-            <a href="/">
+            <a href="/" aria-label="Follow us on Instagram">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
